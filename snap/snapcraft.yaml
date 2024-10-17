@@ -17,24 +17,28 @@ parts:
   pretty:
     source: https://git.staging.snapcraftcontent.com/ubuntu/public/sourcecraft/bowenfan-pretty
     source-type: git
+    source-depth: 1
     source-branch: 0.2-24.04_edge
     plugin: nil
     override-stage: ""
   text:
     source: https://git.staging.snapcraftcontent.com/ubuntu/public/sourcecraft/bowenfan-text
     source-type: git
+    source-depth: 1
     source-branch: 0.1-24.04_edge
     plugin: nil
     override-stage: ""
   sys:
     source: https://git.staging.snapcraftcontent.com/ubuntu/public/sourcecraft/bowenfan-sys
     source-type: git
+    source-depth: 1
     source-branch: 0.18-24.04_edge
     plugin: nil
     override-stage: ""
   ar:
     source: https://git.staging.snapcraftcontent.com/ubuntu/public/sourcecraft/bowenfan-ar
     source-type: git
+    source-depth: 1
     source-branch: 0.1-24.04_edge
     plugin: nil
     after: [pretty, text, sys]
@@ -42,6 +46,7 @@ parts:
   go-flags:
     source: https://git.staging.snapcraftcontent.com/ubuntu/public/sourcecraft/bowenfan-go-flags
     source-type: git
+    source-depth: 1
     source-branch: 1.5-24.04_edge
     plugin: nil
     after: [pretty, text, sys]
@@ -49,6 +54,7 @@ parts:
   fslock:
     source: https://git.staging.snapcraftcontent.com/ubuntu/public/sourcecraft/bowenfan-fslock
     source-type: git
+    source-depth: 1
     source-branch: 0.1-24.04_edge
     plugin: nil
     after: [pretty, text, sys]
@@ -56,6 +62,7 @@ parts:
   compress:
     source: https://git.staging.snapcraftcontent.com/ubuntu/public/sourcecraft/bowenfan-compress
     source-type: git
+    source-depth: 1
     source-branch: 1.15-24.04_edge
     plugin: nil
     after: [pretty, text, sys]
@@ -63,6 +70,7 @@ parts:
   xz:
     source: https://git.staging.snapcraftcontent.com/ubuntu/public/sourcecraft/bowenfan-xz
     source-type: git
+    source-depth: 1
     source-branch: 0.5-24.04_edge
     plugin: nil
     after: [pretty, text, sys]
@@ -70,6 +78,7 @@ parts:
   starlark-go:
     source: https://git.staging.snapcraftcontent.com/ubuntu/public/sourcecraft/bowenfan-starlark-go
     source-type: git
+    source-depth: 1
     source-branch: 0.1-24.04_edge
     plugin: nil
     after: [pretty, text, sys]
@@ -77,6 +86,7 @@ parts:
   crypto:
     source: https://git.staging.snapcraftcontent.com/ubuntu/public/sourcecraft/bowenfan-crypto
     source-type: git
+    source-depth: 1
     source-branch: 0.21-24.04_edge
     plugin: nil
     after: [pretty, text, sys]
@@ -84,6 +94,7 @@ parts:
   term:
     source: https://git.staging.snapcraftcontent.com/ubuntu/public/sourcecraft/bowenfan-term
     source-type: git
+    source-depth: 1
     source-branch: 0.18-24.04_edge
     plugin: nil
     after: [pretty, text, sys]
@@ -91,6 +102,7 @@ parts:
   check-v1:
     source: https://git.staging.snapcraftcontent.com/ubuntu/public/sourcecraft/bowenfan-check-v1
     source-type: git
+    source-depth: 1
     source-branch: 1.0-24.04_edge
     plugin: nil
     after: [pretty, text, sys]
@@ -98,6 +110,7 @@ parts:
   yaml-v3:
     source: https://git.staging.snapcraftcontent.com/ubuntu/public/sourcecraft/bowenfan-yaml-v3
     source-type: git
+    source-depth: 1
     source-branch: 3.0-24.04_edge
     plugin: nil
     after: [pretty, text, sys]
@@ -105,6 +118,7 @@ parts:
   chisel:
     source: https://git.staging.snapcraftcontent.com/ubuntu/public/sourcecraft/bowenfan-chisel
     source-type: git
+    source-depth: 1
     source-branch: 1.0-24.04_edge
     plugin: go
     build-snaps:
