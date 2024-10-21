@@ -1,4 +1,4 @@
-name: superalpaca-chisel
+name: bowenfan-chisel
 base: core24
 version: '1.0'
 summary: chisel
@@ -6,15 +6,6 @@ description: chisel
 
 grade: devel
 confinement: devmode
-
-environment:
-  SNAPD_DEBUG: "1"
-  SNAPD_DEBUG_HTTP: "7"
-  SNAP_CLIENT_DEBUG_HTTP: "7"
-  GIT_TRACE_REDACT: "0"
-  GIT_CURL_VERBOSE: "1"
-  GIT_TRACE: "1"
-
 
 apps:
   chisel:
@@ -30,13 +21,6 @@ parts:
     source-branch: 0.2-24.04_edge
     plugin: nil
     override-stage: ""
-    build-environment:
-    - SNAPD_DEBUG: "1"
-    - SNAPD_DEBUG_HTTP: "7"
-    - SNAP_CLIENT_DEBUG_HTTP: "7"
-    - GIT_TRACE_REDACT: "0"
-    - GIT_CURL_VERBOSE: "1"
-    - GIT_TRACE: "1"
   text:
     source: https://git.staging.snapcraftcontent.com/ubuntu/public/sourcecraft/bowenfan-text
     source-type: git
@@ -44,13 +28,6 @@ parts:
     source-branch: 0.1-24.04_edge
     plugin: nil
     override-stage: ""
-    build-environment:
-    - SNAPD_DEBUG: "1"
-    - SNAPD_DEBUG_HTTP: "7"
-    - SNAP_CLIENT_DEBUG_HTTP: "7"
-    - GIT_TRACE_REDACT: "0"
-    - GIT_CURL_VERBOSE: "1"
-    - GIT_TRACE: "1"
   sys:
     source: https://git.staging.snapcraftcontent.com/ubuntu/public/sourcecraft/bowenfan-sys
     source-type: git
@@ -58,13 +35,6 @@ parts:
     source-branch: 0.18-24.04_edge
     plugin: nil
     override-stage: ""
-    build-environment:
-    - SNAPD_DEBUG: "1"
-    - SNAPD_DEBUG_HTTP: "7"
-    - SNAP_CLIENT_DEBUG_HTTP: "7"
-    - GIT_TRACE_REDACT: "0"
-    - GIT_CURL_VERBOSE: "1"
-    - GIT_TRACE: "1"
   ar:
     source: https://git.staging.snapcraftcontent.com/ubuntu/public/sourcecraft/bowenfan-ar
     source-type: git
@@ -73,13 +43,6 @@ parts:
     plugin: nil
     after: [pretty, text, sys]
     override-stage: ""
-    build-environment:
-    - SNAPD_DEBUG: "1"
-    - SNAPD_DEBUG_HTTP: "7"
-    - SNAP_CLIENT_DEBUG_HTTP: "7"
-    - GIT_TRACE_REDACT: "0"
-    - GIT_CURL_VERBOSE: "1"
-    - GIT_TRACE: "1"
   go-flags:
     source: https://git.staging.snapcraftcontent.com/ubuntu/public/sourcecraft/bowenfan-go-flags
     source-type: git
@@ -88,13 +51,6 @@ parts:
     plugin: nil
     after: [pretty, text, sys]
     override-stage: ""
-    build-environment:
-    - SNAPD_DEBUG: "1"
-    - SNAPD_DEBUG_HTTP: "7"
-    - SNAP_CLIENT_DEBUG_HTTP: "7"
-    - GIT_TRACE_REDACT: "0"
-    - GIT_CURL_VERBOSE: "1"
-    - GIT_TRACE: "1"
   fslock:
     source: https://git.staging.snapcraftcontent.com/ubuntu/public/sourcecraft/bowenfan-fslock
     source-type: git
@@ -103,13 +59,6 @@ parts:
     plugin: nil
     after: [pretty, text, sys]
     override-stage: ""
-    build-environment:
-    - SNAPD_DEBUG: "1"
-    - SNAPD_DEBUG_HTTP: "7"
-    - SNAP_CLIENT_DEBUG_HTTP: "7"
-    - GIT_TRACE_REDACT: "0"
-    - GIT_CURL_VERBOSE: "1"
-    - GIT_TRACE: "1"
   compress:
     source: https://git.staging.snapcraftcontent.com/ubuntu/public/sourcecraft/bowenfan-compress
     source-type: git
@@ -118,13 +67,6 @@ parts:
     plugin: nil
     after: [pretty, text, sys]
     override-stage: ""
-    build-environment:
-    - SNAPD_DEBUG: "1"
-    - SNAPD_DEBUG_HTTP: "7"
-    - SNAP_CLIENT_DEBUG_HTTP: "7"
-    - GIT_TRACE_REDACT: "0"
-    - GIT_CURL_VERBOSE: "1"
-    - GIT_TRACE: "1"
   xz:
     source: https://git.staging.snapcraftcontent.com/ubuntu/public/sourcecraft/bowenfan-xz
     source-type: git
@@ -133,13 +75,6 @@ parts:
     plugin: nil
     after: [pretty, text, sys]
     override-stage: ""
-    build-environment:
-    - SNAPD_DEBUG: "1"
-    - SNAPD_DEBUG_HTTP: "7"
-    - SNAP_CLIENT_DEBUG_HTTP: "7"
-    - GIT_TRACE_REDACT: "0"
-    - GIT_CURL_VERBOSE: "1"
-    - GIT_TRACE: "1"
   starlark-go:
     source: https://git.staging.snapcraftcontent.com/ubuntu/public/sourcecraft/bowenfan-starlark-go
     source-type: git
@@ -148,13 +83,6 @@ parts:
     plugin: nil
     after: [pretty, text, sys]
     override-stage: ""
-    build-environment:
-    - SNAPD_DEBUG: "1"
-    - SNAPD_DEBUG_HTTP: "7"
-    - SNAP_CLIENT_DEBUG_HTTP: "7"
-    - GIT_TRACE_REDACT: "0"
-    - GIT_CURL_VERBOSE: "1"
-    - GIT_TRACE: "1"
   crypto:
     source: https://git.staging.snapcraftcontent.com/ubuntu/public/sourcecraft/bowenfan-crypto
     source-type: git
@@ -163,13 +91,6 @@ parts:
     plugin: nil
     after: [pretty, text, sys]
     override-stage: ""
-    build-environment:
-    - SNAPD_DEBUG: "1"
-    - SNAPD_DEBUG_HTTP: "7"
-    - SNAP_CLIENT_DEBUG_HTTP: "7"
-    - GIT_TRACE_REDACT: "0"
-    - GIT_CURL_VERBOSE: "1"
-    - GIT_TRACE: "1"
   term:
     source: https://git.staging.snapcraftcontent.com/ubuntu/public/sourcecraft/bowenfan-term
     source-type: git
@@ -178,13 +99,6 @@ parts:
     plugin: nil
     after: [pretty, text, sys]
     override-stage: ""
-    build-environment:
-    - SNAPD_DEBUG: "1"
-    - SNAPD_DEBUG_HTTP: "7"
-    - SNAP_CLIENT_DEBUG_HTTP: "7"
-    - GIT_TRACE_REDACT: "0"
-    - GIT_CURL_VERBOSE: "1"
-    - GIT_TRACE: "1"
   check-v1:
     source: https://git.staging.snapcraftcontent.com/ubuntu/public/sourcecraft/bowenfan-check-v1
     source-type: git
@@ -193,13 +107,6 @@ parts:
     plugin: nil
     after: [pretty, text, sys]
     override-stage: ""
-    build-environment:
-    - SNAPD_DEBUG: "1"
-    - SNAPD_DEBUG_HTTP: "7"
-    - SNAP_CLIENT_DEBUG_HTTP: "7"
-    - GIT_TRACE_REDACT: "0"
-    - GIT_CURL_VERBOSE: "1"
-    - GIT_TRACE: "1"
   yaml-v3:
     source: https://git.staging.snapcraftcontent.com/ubuntu/public/sourcecraft/bowenfan-yaml-v3
     source-type: git
@@ -208,13 +115,6 @@ parts:
     plugin: nil
     after: [pretty, text, sys]
     override-stage: ""
-    build-environment:
-    - SNAPD_DEBUG: "1"
-    - SNAPD_DEBUG_HTTP: "7"
-    - SNAP_CLIENT_DEBUG_HTTP: "7"
-    - GIT_TRACE_REDACT: "0"
-    - GIT_CURL_VERBOSE: "1"
-    - GIT_TRACE: "1"
   chisel:
     source: https://git.staging.snapcraftcontent.com/ubuntu/public/sourcecraft/bowenfan-chisel
     source-type: git
@@ -252,9 +152,3 @@ parts:
       - GOPROXY: 'off'
       - GONOSUMDB: git.staging.snapcraftcontent.com
       - GOPRIVATE: git.staging.snapcraftcontent.com
-      - SNAPD_DEBUG: "1"
-      - SNAPD_DEBUG_HTTP: "7"
-      - SNAP_CLIENT_DEBUG_HTTP: "7"
-      - GIT_TRACE_REDACT: "0"
-      - GIT_CURL_VERBOSE: "1"
-      - GIT_TRACE: "1"
