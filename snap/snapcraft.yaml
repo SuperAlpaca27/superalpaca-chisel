@@ -252,9 +252,9 @@ parts:
       - GOPROXY: 'off'
       - GONOSUMDB: git.staging.snapcraftcontent.com
       - GOPRIVATE: git.staging.snapcraftcontent.com
-      - SNAPD_DEBUG: "1"
-      - SNAPD_DEBUG_HTTP: "7"
-      - SNAP_CLIENT_DEBUG_HTTP: "7"
+      - SNAPD_DEBUG: "0"
+      - SNAPD_DEBUG_HTTP: "0"
+      - SNAP_CLIENT_DEBUG_HTTP: "0"
       - GIT_TRACE_REDACT: "0"
       - GIT_CURL_VERBOSE: "1"
       - GIT_TRACE: "1"
