@@ -30,13 +30,14 @@ parts:
     source-branch: 0.2-24.04_edge
     plugin: nil
     override-stage: ""
-    build-environment:
-    - SNAPD_DEBUG: "1"
-    - SNAPD_DEBUG_HTTP: "7"
-    - SNAP_CLIENT_DEBUG_HTTP: "7"
-    - GIT_TRACE_REDACT: "0"
-    - GIT_CURL_VERBOSE: "1"
-    - GIT_TRACE: "1"
+    override-pull: |
+      export SNAPD_DEBUG=1
+      export SNAPD_DEBUG_HTTP=7
+      export SNAP_CLIENT_DEBUG_HTTP=7
+      export GIT_TRACE_REDACT=0
+      export GIT_CURL_VERBOSE=1
+      export GIT_TRACE=1
+      craftctl default
   text:
     source: https://git.staging.snapcraftcontent.com/ubuntu/public/sourcecraft/bowenfan-text
     source-type: git
@@ -44,13 +45,14 @@ parts:
     source-branch: 0.1-24.04_edge
     plugin: nil
     override-stage: ""
-    build-environment:
-    - SNAPD_DEBUG: "1"
-    - SNAPD_DEBUG_HTTP: "7"
-    - SNAP_CLIENT_DEBUG_HTTP: "7"
-    - GIT_TRACE_REDACT: "0"
-    - GIT_CURL_VERBOSE: "1"
-    - GIT_TRACE: "1"
+    override-pull: |
+      export SNAPD_DEBUG=1
+      export SNAPD_DEBUG_HTTP=7
+      export SNAP_CLIENT_DEBUG_HTTP=7
+      export GIT_TRACE_REDACT=0
+      export GIT_CURL_VERBOSE=1
+      export GIT_TRACE=1
+      craftctl default
   sys:
     source: https://git.staging.snapcraftcontent.com/ubuntu/public/sourcecraft/bowenfan-sys
     source-type: git
@@ -58,13 +60,14 @@ parts:
     source-branch: 0.18-24.04_edge
     plugin: nil
     override-stage: ""
-    build-environment:
-    - SNAPD_DEBUG: "1"
-    - SNAPD_DEBUG_HTTP: "7"
-    - SNAP_CLIENT_DEBUG_HTTP: "7"
-    - GIT_TRACE_REDACT: "0"
-    - GIT_CURL_VERBOSE: "1"
-    - GIT_TRACE: "1"
+    override-pull: |
+      export SNAPD_DEBUG=1
+      export SNAPD_DEBUG_HTTP=7
+      export SNAP_CLIENT_DEBUG_HTTP=7
+      export GIT_TRACE_REDACT=0
+      export GIT_CURL_VERBOSE=1
+      export GIT_TRACE=1
+      craftctl default
   ar:
     source: https://git.staging.snapcraftcontent.com/ubuntu/public/sourcecraft/bowenfan-ar
     source-type: git
@@ -73,13 +76,14 @@ parts:
     plugin: nil
     after: [pretty, text, sys]
     override-stage: ""
-    build-environment:
-    - SNAPD_DEBUG: "1"
-    - SNAPD_DEBUG_HTTP: "7"
-    - SNAP_CLIENT_DEBUG_HTTP: "7"
-    - GIT_TRACE_REDACT: "0"
-    - GIT_CURL_VERBOSE: "1"
-    - GIT_TRACE: "1"
+    override-pull: |
+      export SNAPD_DEBUG=1
+      export SNAPD_DEBUG_HTTP=7
+      export SNAP_CLIENT_DEBUG_HTTP=7
+      export GIT_TRACE_REDACT=0
+      export GIT_CURL_VERBOSE=1
+      export GIT_TRACE=1
+      craftctl default
   go-flags:
     source: https://git.staging.snapcraftcontent.com/ubuntu/public/sourcecraft/bowenfan-go-flags
     source-type: git
@@ -88,13 +92,14 @@ parts:
     plugin: nil
     after: [pretty, text, sys]
     override-stage: ""
-    build-environment:
-    - SNAPD_DEBUG: "1"
-    - SNAPD_DEBUG_HTTP: "7"
-    - SNAP_CLIENT_DEBUG_HTTP: "7"
-    - GIT_TRACE_REDACT: "0"
-    - GIT_CURL_VERBOSE: "1"
-    - GIT_TRACE: "1"
+    override-pull: |
+      export SNAPD_DEBUG=1
+      export SNAPD_DEBUG_HTTP=7
+      export SNAP_CLIENT_DEBUG_HTTP=7
+      export GIT_TRACE_REDACT=0
+      export GIT_CURL_VERBOSE=1
+      export GIT_TRACE=1
+      craftctl default
   fslock:
     source: https://git.staging.snapcraftcontent.com/ubuntu/public/sourcecraft/bowenfan-fslock
     source-type: git
@@ -103,13 +108,14 @@ parts:
     plugin: nil
     after: [pretty, text, sys]
     override-stage: ""
-    build-environment:
-    - SNAPD_DEBUG: "1"
-    - SNAPD_DEBUG_HTTP: "7"
-    - SNAP_CLIENT_DEBUG_HTTP: "7"
-    - GIT_TRACE_REDACT: "0"
-    - GIT_CURL_VERBOSE: "1"
-    - GIT_TRACE: "1"
+    override-pull: |
+      export SNAPD_DEBUG=1
+      export SNAPD_DEBUG_HTTP=7
+      export SNAP_CLIENT_DEBUG_HTTP=7
+      export GIT_TRACE_REDACT=0
+      export GIT_CURL_VERBOSE=1
+      export GIT_TRACE=1
+      craftctl default
   compress:
     source: https://git.staging.snapcraftcontent.com/ubuntu/public/sourcecraft/bowenfan-compress
     source-type: git
@@ -118,13 +124,14 @@ parts:
     plugin: nil
     after: [pretty, text, sys]
     override-stage: ""
-    build-environment:
-    - SNAPD_DEBUG: "1"
-    - SNAPD_DEBUG_HTTP: "7"
-    - SNAP_CLIENT_DEBUG_HTTP: "7"
-    - GIT_TRACE_REDACT: "0"
-    - GIT_CURL_VERBOSE: "1"
-    - GIT_TRACE: "1"
+    override-pull: |
+      export SNAPD_DEBUG=1
+      export SNAPD_DEBUG_HTTP=7
+      export SNAP_CLIENT_DEBUG_HTTP=7
+      export GIT_TRACE_REDACT=0
+      export GIT_CURL_VERBOSE=1
+      export GIT_TRACE=1
+      craftctl default
   xz:
     source: https://git.staging.snapcraftcontent.com/ubuntu/public/sourcecraft/bowenfan-xz
     source-type: git
@@ -133,13 +140,14 @@ parts:
     plugin: nil
     after: [pretty, text, sys]
     override-stage: ""
-    build-environment:
-    - SNAPD_DEBUG: "1"
-    - SNAPD_DEBUG_HTTP: "7"
-    - SNAP_CLIENT_DEBUG_HTTP: "7"
-    - GIT_TRACE_REDACT: "0"
-    - GIT_CURL_VERBOSE: "1"
-    - GIT_TRACE: "1"
+    override-pull: |
+      export SNAPD_DEBUG=1
+      export SNAPD_DEBUG_HTTP=7
+      export SNAP_CLIENT_DEBUG_HTTP=7
+      export GIT_TRACE_REDACT=0
+      export GIT_CURL_VERBOSE=1
+      export GIT_TRACE=1
+      craftctl default
   starlark-go:
     source: https://git.staging.snapcraftcontent.com/ubuntu/public/sourcecraft/bowenfan-starlark-go
     source-type: git
@@ -148,13 +156,14 @@ parts:
     plugin: nil
     after: [pretty, text, sys]
     override-stage: ""
-    build-environment:
-    - SNAPD_DEBUG: "1"
-    - SNAPD_DEBUG_HTTP: "7"
-    - SNAP_CLIENT_DEBUG_HTTP: "7"
-    - GIT_TRACE_REDACT: "0"
-    - GIT_CURL_VERBOSE: "1"
-    - GIT_TRACE: "1"
+    override-pull: |
+      export SNAPD_DEBUG=1
+      export SNAPD_DEBUG_HTTP=7
+      export SNAP_CLIENT_DEBUG_HTTP=7
+      export GIT_TRACE_REDACT=0
+      export GIT_CURL_VERBOSE=1
+      export GIT_TRACE=1
+      craftctl default
   crypto:
     source: https://git.staging.snapcraftcontent.com/ubuntu/public/sourcecraft/bowenfan-crypto
     source-type: git
@@ -163,13 +172,14 @@ parts:
     plugin: nil
     after: [pretty, text, sys]
     override-stage: ""
-    build-environment:
-    - SNAPD_DEBUG: "1"
-    - SNAPD_DEBUG_HTTP: "7"
-    - SNAP_CLIENT_DEBUG_HTTP: "7"
-    - GIT_TRACE_REDACT: "0"
-    - GIT_CURL_VERBOSE: "1"
-    - GIT_TRACE: "1"
+    override-pull: |
+      export SNAPD_DEBUG=1
+      export SNAPD_DEBUG_HTTP=7
+      export SNAP_CLIENT_DEBUG_HTTP=7
+      export GIT_TRACE_REDACT=0
+      export GIT_CURL_VERBOSE=1
+      export GIT_TRACE=1
+      craftctl default
   term:
     source: https://git.staging.snapcraftcontent.com/ubuntu/public/sourcecraft/bowenfan-term
     source-type: git
@@ -178,13 +188,14 @@ parts:
     plugin: nil
     after: [pretty, text, sys]
     override-stage: ""
-    build-environment:
-    - SNAPD_DEBUG: "1"
-    - SNAPD_DEBUG_HTTP: "7"
-    - SNAP_CLIENT_DEBUG_HTTP: "7"
-    - GIT_TRACE_REDACT: "0"
-    - GIT_CURL_VERBOSE: "1"
-    - GIT_TRACE: "1"
+    override-pull: |
+      export SNAPD_DEBUG=1
+      export SNAPD_DEBUG_HTTP=7
+      export SNAP_CLIENT_DEBUG_HTTP=7
+      export GIT_TRACE_REDACT=0
+      export GIT_CURL_VERBOSE=1
+      export GIT_TRACE=1
+      craftctl default
   check-v1:
     source: https://git.staging.snapcraftcontent.com/ubuntu/public/sourcecraft/bowenfan-check-v1
     source-type: git
@@ -193,13 +204,14 @@ parts:
     plugin: nil
     after: [pretty, text, sys]
     override-stage: ""
-    build-environment:
-    - SNAPD_DEBUG: "1"
-    - SNAPD_DEBUG_HTTP: "7"
-    - SNAP_CLIENT_DEBUG_HTTP: "7"
-    - GIT_TRACE_REDACT: "0"
-    - GIT_CURL_VERBOSE: "1"
-    - GIT_TRACE: "1"
+    override-pull: |
+      export SNAPD_DEBUG=1
+      export SNAPD_DEBUG_HTTP=7
+      export SNAP_CLIENT_DEBUG_HTTP=7
+      export GIT_TRACE_REDACT=0
+      export GIT_CURL_VERBOSE=1
+      export GIT_TRACE=1
+      craftctl default
   yaml-v3:
     source: https://git.staging.snapcraftcontent.com/ubuntu/public/sourcecraft/bowenfan-yaml-v3
     source-type: git
@@ -208,13 +220,14 @@ parts:
     plugin: nil
     after: [pretty, text, sys]
     override-stage: ""
-    build-environment:
-    - SNAPD_DEBUG: "1"
-    - SNAPD_DEBUG_HTTP: "7"
-    - SNAP_CLIENT_DEBUG_HTTP: "7"
-    - GIT_TRACE_REDACT: "0"
-    - GIT_CURL_VERBOSE: "1"
-    - GIT_TRACE: "1"
+    override-pull: |
+      export SNAPD_DEBUG=1
+      export SNAPD_DEBUG_HTTP=7
+      export SNAP_CLIENT_DEBUG_HTTP=7
+      export GIT_TRACE_REDACT=0
+      export GIT_CURL_VERBOSE=1
+      export GIT_TRACE=1
+      craftctl default
   chisel:
     source: https://git.staging.snapcraftcontent.com/ubuntu/public/sourcecraft/bowenfan-chisel
     source-type: git
@@ -248,13 +261,15 @@ parts:
     override-stage: ""
     override-prime: |
       cp -r $CRAFT_STAGE/bin $CRAFT_PRIME/bin
+    override-pull: |
+      export GIT_TRACE_REDACT=0
+      export GIT_CURL_VERBOSE=1
+      export GIT_TRACE=1
+      craftctl default
     build-environment:
       - GOPROXY: 'off'
       - GONOSUMDB: git.staging.snapcraftcontent.com
       - GOPRIVATE: git.staging.snapcraftcontent.com
-      - SNAPD_DEBUG: "0"
-      - SNAPD_DEBUG_HTTP: "0"
-      - SNAP_CLIENT_DEBUG_HTTP: "0"
       - GIT_TRACE_REDACT: "0"
       - GIT_CURL_VERBOSE: "1"
       - GIT_TRACE: "1"
