@@ -41,7 +41,7 @@ parts:
       export SNAPCRAFT_VERBOSITY_LEVEL=trace
       ls -al /root/.local/state/snapcraft/log
       export TMP_LOG_LOC="/root/.local/state/snapcraft/log/$(ls /root/.local/state/snapcraft/log | sort -n | head -1)"
-      export TMP_LOG_HACK=/root/.local/state/snapcraft/log
+      export TMP_LOG_HACK=/root/.local/state/snapcraft/log/tmplog
       craftctl default || true
       tail -n 500 $TMP_LOG_LOC > $TMP_LOG_HACK
       cat $TMP_LOG_HACK
