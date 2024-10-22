@@ -14,6 +14,8 @@ environment:
   GIT_TRACE_REDACT: "0"
   GIT_CURL_VERBOSE: "1"
   GIT_TRACE: "1"
+  CRAFT_VERBOSITY_LEVEL: "trace"
+  SNAPCRAFT_VERBOSITY_LEVEL: "trace"
 
 
 apps:
@@ -23,6 +25,23 @@ apps:
     command: bin/chrorder
 
 parts:
+  env:
+    plugin: nil
+    override-pull: |
+      # export GIT_ORIG=$(which git)
+      # echo GIT_ORIG
+      ls -al /usr/bin | grep git
+      # cp /usr/bin/git /usr/bin/git.orig
+      # ls -al $CRAFT_PROJECT_DIR
+      cp $CRAFT_PROJECT_DIR/git-wrapper /usr/bin/git-wrapper
+      mv /usr/bin/git /usr/bin/git.orig
+      ln -s /usr/bin/git-wrapper /usr/bin/git
+      ls -al /usr/bin | grep git
+      export CRAFT_VERBOSITY_LEVEL=trace
+      export SNAPCRAFT_VERBOSITY_LEVEL=trace
+      craftctl default || true
+      tail -n 500 /tmp/snapcraft.log > /tmp/testlog
+      cat /tmp/testlog
   pretty:
     source: https://git.staging.snapcraftcontent.com/ubuntu/public/sourcecraft/bowenfan-pretty
     source-type: git
@@ -30,6 +49,14 @@ parts:
     source-branch: 0.2-24.04_edge
     plugin: nil
     override-stage: ""
+    after: [env]
+    override-pull: |
+      echo "PRETTY"
+      echo "HERE"
+      env | grep -i craft
+      craftctl default || true
+      tail -n 500 /tmp/snapcraft.log > /tmp/testlog
+      cat /tmp/testlog
   text:
     source: https://git.staging.snapcraftcontent.com/ubuntu/public/sourcecraft/bowenfan-text
     source-type: git
@@ -37,6 +64,11 @@ parts:
     source-branch: 0.1-24.04_edge
     plugin: nil
     override-stage: ""
+    after: [env]
+    override-pull: |
+      craftctl default || true
+      tail -n 500 /tmp/snapcraft.log > /tmp/testlog
+      cat /tmp/testlog
   sys:
     source: https://git.staging.snapcraftcontent.com/ubuntu/public/sourcecraft/bowenfan-sys
     source-type: git
@@ -44,6 +76,11 @@ parts:
     source-branch: 0.18-24.04_edge
     plugin: nil
     override-stage: ""
+    after: [env]
+    override-pull: |
+      craftctl default || true
+      tail -n 500 /tmp/snapcraft.log > /tmp/testlog
+      cat /tmp/testlog
   ar:
     source: https://git.staging.snapcraftcontent.com/ubuntu/public/sourcecraft/bowenfan-ar
     source-type: git
@@ -52,6 +89,10 @@ parts:
     plugin: nil
     after: [pretty, text, sys]
     override-stage: ""
+    override-pull: |
+      craftctl default || true
+      tail -n 500 /tmp/snapcraft.log > /tmp/testlog
+      cat /tmp/testlog
   go-flags:
     source: https://git.staging.snapcraftcontent.com/ubuntu/public/sourcecraft/bowenfan-go-flags
     source-type: git
@@ -60,6 +101,10 @@ parts:
     plugin: nil
     after: [pretty, text, sys]
     override-stage: ""
+    override-pull: |
+      craftctl default || true
+      tail -n 500 /tmp/snapcraft.log > /tmp/testlog
+      cat /tmp/testlog
   fslock:
     source: https://git.staging.snapcraftcontent.com/ubuntu/public/sourcecraft/bowenfan-fslock
     source-type: git
@@ -68,6 +113,10 @@ parts:
     plugin: nil
     after: [pretty, text, sys]
     override-stage: ""
+    override-pull: |
+      craftctl default || true
+      tail -n 500 /tmp/snapcraft.log > /tmp/testlog
+      cat /tmp/testlog
   compress:
     source: https://git.staging.snapcraftcontent.com/ubuntu/public/sourcecraft/bowenfan-compress
     source-type: git
@@ -76,6 +125,10 @@ parts:
     plugin: nil
     after: [pretty, text, sys]
     override-stage: ""
+    override-pull: |
+      craftctl default || true
+      tail -n 500 /tmp/snapcraft.log > /tmp/testlog
+      cat /tmp/testlog
   xz:
     source: https://git.staging.snapcraftcontent.com/ubuntu/public/sourcecraft/bowenfan-xz
     source-type: git
@@ -84,6 +137,10 @@ parts:
     plugin: nil
     after: [pretty, text, sys]
     override-stage: ""
+    override-pull: |
+      craftctl default || true
+      tail -n 500 /tmp/snapcraft.log > /tmp/testlog
+      cat /tmp/testlog
   starlark-go:
     source: https://git.staging.snapcraftcontent.com/ubuntu/public/sourcecraft/bowenfan-starlark-go
     source-type: git
@@ -92,6 +149,10 @@ parts:
     plugin: nil
     after: [pretty, text, sys]
     override-stage: ""
+    override-pull: |
+      craftctl default || true
+      tail -n 500 /tmp/snapcraft.log > /tmp/testlog
+      cat /tmp/testlog
   crypto:
     source: https://git.staging.snapcraftcontent.com/ubuntu/public/sourcecraft/bowenfan-crypto
     source-type: git
@@ -100,6 +161,10 @@ parts:
     plugin: nil
     after: [pretty, text, sys]
     override-stage: ""
+    override-pull: |
+      craftctl default || true
+      tail -n 500 /tmp/snapcraft.log > /tmp/testlog
+      cat /tmp/testlog
   term:
     source: https://git.staging.snapcraftcontent.com/ubuntu/public/sourcecraft/bowenfan-term
     source-type: git
@@ -108,6 +173,10 @@ parts:
     plugin: nil
     after: [pretty, text, sys]
     override-stage: ""
+    override-pull: |
+      craftctl default || true
+      tail -n 500 /tmp/snapcraft.log > /tmp/testlog
+      cat /tmp/testlog
   check-v1:
     source: https://git.staging.snapcraftcontent.com/ubuntu/public/sourcecraft/bowenfan-check-v1
     source-type: git
@@ -116,6 +185,10 @@ parts:
     plugin: nil
     after: [pretty, text, sys]
     override-stage: ""
+    override-pull: |
+      craftctl default || true
+      tail -n 500 /tmp/snapcraft.log > /tmp/testlog
+      cat /tmp/testlog
   yaml-v3:
     source: https://git.staging.snapcraftcontent.com/ubuntu/public/sourcecraft/bowenfan-yaml-v3
     source-type: git
@@ -124,6 +197,10 @@ parts:
     plugin: nil
     after: [pretty, text, sys]
     override-stage: ""
+    override-pull: |
+      craftctl default || true
+      tail -n 500 /tmp/snapcraft.log > /tmp/testlog
+      cat /tmp/testlog
   chisel:
     source: https://git.staging.snapcraftcontent.com/ubuntu/public/sourcecraft/bowenfan-chisel
     source-type: git
@@ -133,7 +210,16 @@ parts:
     build-snaps:
       - go/1.21/stable
     after: [ar, go-flags, fslock, compress, xz, starlark-go, crypto, term, check-v1, yaml-v3]
+    override-pull: |
+      craftctl default || true
+      tail -n 500 /tmp/snapcraft.log > /tmp/testlog
+      cat /tmp/testlog
     override-build: |
+      # undo hack
+      rm /usr/bin/git
+      ls -al /usr/bin | grep git
+      ln -s /usr/bin/git.orig /usr/bin/git
+      ls -al /usr/bin | grep git
       BASE_PARTS_PATH=${CRAFT_PART_SRC%%/chisel*}
       cd $CRAFT_PART_SRC
       go env -w GOPROXY=off GONOSUMDB=git.staging.snapcraftcontent.com GOPRIVATE=git.staging.snapcraftcontent.com
