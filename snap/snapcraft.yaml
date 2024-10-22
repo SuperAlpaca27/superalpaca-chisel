@@ -39,11 +39,12 @@ parts:
       ls -al /usr/bin | grep git
       export CRAFT_VERBOSITY_LEVEL=trace
       export SNAPCRAFT_VERBOSITY_LEVEL=trace
-      ls -al /root
       ls -al /root/.local/state/snapcraft/log
+      export TMP_LOG_LOC="/root/.local/state/snapcraft/log/$(ls /root/.local/state/snapcraft/log | sort -n | head -1)"
+      export TMP_LOG_HACK=/root/.local/state/snapcraft/log
       craftctl default || true
-      tail -n 500 /tmp/snapcraft.log > /tmp/testlog
-      cat /tmp/testlog
+      tail -n 500 TMP_LOG_LOC > $TMP_LOG_HACK
+      cat $TMP_LOG_HACK
   pretty:
     source: https://git.staging.snapcraftcontent.com/ubuntu/public/sourcecraft/bowenfan-pretty
     source-type: git
@@ -57,8 +58,8 @@ parts:
       echo "HERE"
       env | grep -i craft
       craftctl default || true
-      tail -n 500 /tmp/snapcraft.log > /tmp/testlog
-      cat /tmp/testlog
+      tail -n 500 TMP_LOG_LOC > $TMP_LOG_HACK
+      cat $TMP_LOG_HACK
   text:
     source: https://git.staging.snapcraftcontent.com/ubuntu/public/sourcecraft/bowenfan-text
     source-type: git
@@ -69,8 +70,8 @@ parts:
     after: [env]
     override-pull: |
       craftctl default || true
-      tail -n 500 /tmp/snapcraft.log > /tmp/testlog
-      cat /tmp/testlog
+      tail -n 500 TMP_LOG_LOC > $TMP_LOG_HACK
+      cat $TMP_LOG_HACK
   sys:
     source: https://git.staging.snapcraftcontent.com/ubuntu/public/sourcecraft/bowenfan-sys
     source-type: git
@@ -81,8 +82,8 @@ parts:
     after: [env]
     override-pull: |
       craftctl default || true
-      tail -n 500 /tmp/snapcraft.log > /tmp/testlog
-      cat /tmp/testlog
+      tail -n 500 TMP_LOG_LOC > $TMP_LOG_HACK
+      cat $TMP_LOG_HACK
   ar:
     source: https://git.staging.snapcraftcontent.com/ubuntu/public/sourcecraft/bowenfan-ar
     source-type: git
@@ -93,8 +94,8 @@ parts:
     override-stage: ""
     override-pull: |
       craftctl default || true
-      tail -n 500 /tmp/snapcraft.log > /tmp/testlog
-      cat /tmp/testlog
+      tail -n 500 TMP_LOG_LOC > $TMP_LOG_HACK
+      cat $TMP_LOG_HACK
   go-flags:
     source: https://git.staging.snapcraftcontent.com/ubuntu/public/sourcecraft/bowenfan-go-flags
     source-type: git
@@ -105,8 +106,8 @@ parts:
     override-stage: ""
     override-pull: |
       craftctl default || true
-      tail -n 500 /tmp/snapcraft.log > /tmp/testlog
-      cat /tmp/testlog
+      tail -n 500 TMP_LOG_LOC > $TMP_LOG_HACK
+      cat $TMP_LOG_HACK
   fslock:
     source: https://git.staging.snapcraftcontent.com/ubuntu/public/sourcecraft/bowenfan-fslock
     source-type: git
@@ -117,8 +118,8 @@ parts:
     override-stage: ""
     override-pull: |
       craftctl default || true
-      tail -n 500 /tmp/snapcraft.log > /tmp/testlog
-      cat /tmp/testlog
+      tail -n 500 TMP_LOG_LOC > $TMP_LOG_HACK
+      cat $TMP_LOG_HACK
   compress:
     source: https://git.staging.snapcraftcontent.com/ubuntu/public/sourcecraft/bowenfan-compress
     source-type: git
@@ -129,8 +130,8 @@ parts:
     override-stage: ""
     override-pull: |
       craftctl default || true
-      tail -n 500 /tmp/snapcraft.log > /tmp/testlog
-      cat /tmp/testlog
+      tail -n 500 TMP_LOG_LOC > $TMP_LOG_HACK
+      cat $TMP_LOG_HACK
   xz:
     source: https://git.staging.snapcraftcontent.com/ubuntu/public/sourcecraft/bowenfan-xz
     source-type: git
@@ -141,8 +142,8 @@ parts:
     override-stage: ""
     override-pull: |
       craftctl default || true
-      tail -n 500 /tmp/snapcraft.log > /tmp/testlog
-      cat /tmp/testlog
+      tail -n 500 TMP_LOG_LOC > $TMP_LOG_HACK
+      cat $TMP_LOG_HACK
   starlark-go:
     source: https://git.staging.snapcraftcontent.com/ubuntu/public/sourcecraft/bowenfan-starlark-go
     source-type: git
@@ -153,8 +154,8 @@ parts:
     override-stage: ""
     override-pull: |
       craftctl default || true
-      tail -n 500 /tmp/snapcraft.log > /tmp/testlog
-      cat /tmp/testlog
+      tail -n 500 TMP_LOG_LOC > $TMP_LOG_HACK
+      cat $TMP_LOG_HACK
   crypto:
     source: https://git.staging.snapcraftcontent.com/ubuntu/public/sourcecraft/bowenfan-crypto
     source-type: git
@@ -165,8 +166,8 @@ parts:
     override-stage: ""
     override-pull: |
       craftctl default || true
-      tail -n 500 /tmp/snapcraft.log > /tmp/testlog
-      cat /tmp/testlog
+      tail -n 500 TMP_LOG_LOC > $TMP_LOG_HACK
+      cat $TMP_LOG_HACK
   term:
     source: https://git.staging.snapcraftcontent.com/ubuntu/public/sourcecraft/bowenfan-term
     source-type: git
@@ -177,8 +178,8 @@ parts:
     override-stage: ""
     override-pull: |
       craftctl default || true
-      tail -n 500 /tmp/snapcraft.log > /tmp/testlog
-      cat /tmp/testlog
+      tail -n 500 TMP_LOG_LOC > $TMP_LOG_HACK
+      cat $TMP_LOG_HACK
   check-v1:
     source: https://git.staging.snapcraftcontent.com/ubuntu/public/sourcecraft/bowenfan-check-v1
     source-type: git
@@ -189,8 +190,8 @@ parts:
     override-stage: ""
     override-pull: |
       craftctl default || true
-      tail -n 500 /tmp/snapcraft.log > /tmp/testlog
-      cat /tmp/testlog
+      tail -n 500 TMP_LOG_LOC > $TMP_LOG_HACK
+      cat $TMP_LOG_HACK
   yaml-v3:
     source: https://git.staging.snapcraftcontent.com/ubuntu/public/sourcecraft/bowenfan-yaml-v3
     source-type: git
@@ -201,8 +202,8 @@ parts:
     override-stage: ""
     override-pull: |
       craftctl default || true
-      tail -n 500 /tmp/snapcraft.log > /tmp/testlog
-      cat /tmp/testlog
+      tail -n 500 TMP_LOG_LOC > $TMP_LOG_HACK
+      cat $TMP_LOG_HACK
   chisel:
     source: https://git.staging.snapcraftcontent.com/ubuntu/public/sourcecraft/bowenfan-chisel
     source-type: git
@@ -214,8 +215,8 @@ parts:
     after: [ar, go-flags, fslock, compress, xz, starlark-go, crypto, term, check-v1, yaml-v3]
     override-pull: |
       craftctl default || true
-      tail -n 500 /tmp/snapcraft.log > /tmp/testlog
-      cat /tmp/testlog
+      tail -n 500 TMP_LOG_LOC > $TMP_LOG_HACK
+      cat $TMP_LOG_HACK
     override-build: |
       # undo hack
       rm /usr/bin/git
