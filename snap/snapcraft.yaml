@@ -39,7 +39,7 @@ parts:
       ls -al /usr/bin | grep git
       export CRAFT_VERBOSITY_LEVEL=trace
       export SNAPCRAFT_VERBOSITY_LEVEL=trace
-      ls -al/root
+      ls -al /root
       ls -al /root/.local/state/snapcraft/log
       craftctl default || true
       tail -n 500 /tmp/snapcraft.log > /tmp/testlog
