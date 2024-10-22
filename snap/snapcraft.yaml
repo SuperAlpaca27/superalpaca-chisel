@@ -2,7 +2,7 @@ name: superalpaca-chisel
 base: core24
 version: '1.0'
 summary: chisel
-description: chisel
+description: chisel tmp
 
 grade: devel
 confinement: devmode
