@@ -8,6 +8,7 @@ description: chisel
 run-user: _daemon_
 platforms:
   amd64:
+  arm64:
 
 parts:
   pretty:
