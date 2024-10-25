@@ -8,10 +8,10 @@ description: chisel
 run-user: _daemon_
 platforms:
   amd64:
-  arm64:
-  armhf:
-  s390x:
-  riscv64:
+  # arm64:
+  # armhf:
+  # s390x:
+  # riscv64:
 
 parts:
   pretty:
